@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MAviewmodels"
+             x:Class="MAexamen3pMAUI.MAviews.MAcitaPage"
+             Title="Citas">
+    <ContentPage.BindingContext>
+        <vm:MAcitaviewmodels />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <CollectionView ItemsSource="{Binding Citas}" SelectionMode="Single"
+                        SelectedItem="{Binding CitaSeleccionada}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding QuoteText}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Ver Detalles" Command="{Binding VerDetallesCommand}" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MAviewmodels"
+             x:Class="MAexamen3pMAUI.MAviews.MAcitaPage"
+             Title="Detalles">
+    <ContentPage.BindingContext>
+        <vm:MADetallesViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Label Text="{Binding QuoteText}" FontSize="Medium" />
+        <Label Text="{Binding Author}" FontSize="Small" />
+        <Button Text="Guardar en Base de Datos" Command="{Binding GuardarCommand}" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MAviewmodels"
+             x:Class="MAexamen3pMAUI.MAviews.MAcitaPage"
+             Title="Guardados">
+    <ContentPage.BindingContext>
+        <vm:MAGuardadosViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <CollectionView ItemsSource="{Binding CitasGuardadas}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding QuoteText}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
